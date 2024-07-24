@@ -17,5 +17,9 @@ spec:
       containers:
         - name: example
           image: ${REGISTRY}/${REPOSITORY}:${IMAGE_TAG}
+          env:
+            # not for production use
+            - name: SECRET_KEY_BASE
+              value: "abc123"
           ports:
             - containerPort: 8080
