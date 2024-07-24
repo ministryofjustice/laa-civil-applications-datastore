@@ -8,5 +8,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'civil_applications#index'
 
-  resource :civil_applications, only: %i[index show create]
+  resources :civil_applications, only: %i[index show create] do
+    collection do
+      get '/:reference_number', to: 'civil_applications#show'
+    end
+  end
 end

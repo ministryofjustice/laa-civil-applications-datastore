@@ -6,8 +6,13 @@ class CivilApplicationsController < ApplicationController
   end
 
   def show
-    app = CivilApplication.first
-    render json: app, status: :ok
+    ref = params[:reference_number]
+    app = CivilApplication.find_by(reference_number: ref)
+    if app
+      render json: app, status: :ok
+    else
+      render status: :not_found
+    end
   end
 
   def create
@@ -17,6 +22,6 @@ class CivilApplicationsController < ApplicationController
       employment_income: params[:employment_income]
     )
     app.save!
-    render json: app, status: :created
+    render json: app.reference_number, status: :created
   end
 end
