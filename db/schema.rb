@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_23_151509) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_25_105214) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "civil_applications", force: :cascade do |t|
     t.string "reference_number"
-    t.bigint "employment_income"
+    t.bigint "housing_amount"
+    t.string "housing_frequency"
+    t.bigint "employment_income_amount"
+    t.string "employment_income_frequency"
+    t.bigint "savings_amount"
   end
-
 end
