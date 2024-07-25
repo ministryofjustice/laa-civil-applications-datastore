@@ -35,7 +35,7 @@ class CivilApplicationsController < ApplicationController
           attributes_to_update
         )
         civil_application.save!
-        render json: app.reference_number, status: :created
+        render json: civil_application.reference_number, status: :created
       end
     else
       render json: 'You need to specify a reference number', status: :bad_request
