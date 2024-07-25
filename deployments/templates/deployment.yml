@@ -22,4 +22,4 @@ spec:
             - name: SECRET_KEY_BASE
               value: "abc123"
           ports:
-            - containerPort: 8080
+            - containerPort: 3000
