@@ -7,4 +7,5 @@ REF_NUMBERS = %w[AB-123456 CD-987654 EF-345678]
 REF_NUMBERS.each do |ref|
   app = CivilApplication.new(id: SecureRandom.uuid, reference_number: ref, employment_income: rand(50000))
   app.save!
+  sleep(5)
 end
