@@ -11,7 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2024_07_23_151509) do
-# Could not dump table "civil_applications" because of following StandardError
-#   Unknown type 'uuid' for column 'id'
+  create_table "civil_applications", force: :cascade do |t|
+    t.string "reference_number"
+    t.bigint "employment_income"
+  end
 
 end
